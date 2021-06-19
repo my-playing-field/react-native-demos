@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Image } from 'react-native';
 
 export default function App() {
 
@@ -11,8 +11,15 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <Text numberOfLines={1} onPress={handlePress}>
-        Hello React Native - A really really long text. Now I wanna make this even longer and see what happens!
+        Hello React Native
       </Text>
+      <Image
+        blurRadius={10} 
+        fadeDuration={1000}
+        source={{
+        width: 200,
+        height: 300,
+        uri: 'https://picsum.photos/200/300'}}/>
     </SafeAreaView>
   );
 }
@@ -20,6 +27,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
 });
